@@ -39,9 +39,9 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public User getUserName(String name) {
-        return entityManager.createQuery("select u from User u where u.name =:un", User.class)
-                .setParameter("un", name)
+    public User getUserEmail(String email) {
+        return entityManager.createQuery("select u from User u where u.email =:un", User.class)
+                .setParameter("un", email)
                 .getSingleResult();
     }
 }

@@ -51,13 +51,13 @@ public class UserServiceImp implements UserService {
 
     @Override
     @Transactional
-    public User getUserName(String name) {
-        return userDao.getUserName(name);
+    public User getUserEmail(String email) {
+        return userDao.getUserEmail(email);
     }
 
     @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        return userDao.getUserName(name);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userDao.getUserEmail(email);
     }
 
     public Set<Role> getRoles() {

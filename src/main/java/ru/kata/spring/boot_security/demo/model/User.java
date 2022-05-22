@@ -16,14 +16,19 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private long id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "surname")
-    private String surname;
-    @Column(name = "department")
-    private String department;
-    @Column(name = "salary")
-    private int salary;
+
+    @Column(name = "first_name")
+    private String first_name;
+
+    @Column(name = "last_name")
+    private String last_name;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "password")
     private String password;
 
@@ -45,7 +50,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return name;
+        return first_name;
     }
 
     @Override
