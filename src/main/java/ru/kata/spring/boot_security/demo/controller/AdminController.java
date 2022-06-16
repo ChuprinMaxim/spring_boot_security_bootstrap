@@ -1,5 +1,6 @@
 package ru.kata.spring.boot_security.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,7 @@ import ru.kata.spring.boot_security.demo.service.UserServiceImp;
 public class AdminController {
 
     private final UserServiceImp userService;
-
+    @Autowired
     public AdminController(UserServiceImp userService) {
         this.userService = userService;
     }

@@ -15,7 +15,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return entityManager.createQuery("select user from User user", User.class).getResultList();
+        return entityManager.createQuery("SELECT user FROM User user", User.class).getResultList();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public User getUserEmail(String email) {
-        return entityManager.createQuery("select u from User u where u.email =:un", User.class)
+        return entityManager.createQuery("SELECT u FROM User u WHERE u.email =:un", User.class)
                 .setParameter("un", email)
                 .getSingleResult();
     }

@@ -26,7 +26,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
@@ -38,7 +38,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public User getUser(long id) {
         return userDao.getUser(id);
     }
@@ -50,7 +50,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public User getUserEmail(String email) {
         return userDao.getUserEmail(email);
     }
@@ -59,7 +59,7 @@ public class UserServiceImp implements UserService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userDao.getUserEmail(email);
     }
-
+    @Transactional(readOnly = true)
     public Set<Role> getRoles() {
         return Set.copyOf(roleDao.findAll());
     }
